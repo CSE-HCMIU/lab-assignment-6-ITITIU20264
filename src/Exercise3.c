@@ -17,32 +17,41 @@ Ex:
 void Ex3(char *str)
 {
 	//Your codes here
-    int length = strlen(str);
-    int shortest = 99;
-    int longest = 1;
-    int n, m;
-    int count = 0;
-    for (int i = 0; i <= length; ++i){
-        if(str[i] == ' ' || str[i] == '\0'){
-            if(count <shortest){
-                m = i;
-                shortest = count;
+    int i;
+    int j;
+    int len = strlen(str);
+    int Shortest = 99;
+    int Longest = 1;
+    int a, b;
+    int sum = 0;
+    for (i = 0; i <= len; ++i)
+    {
+        if(str[i] == ' ' || str[i] == '\0')
+        {
+            if(sum < Shortest)
+            {
+                b = i;
+                Shortest = sum;
             }
-            else if (count > longest){
-                longest = count;
-                n = i;
+            else if (sum > Longest)
+            {
+                Longest = sum;
+                a = i;
             }
-            count = 0;
+            sum = 0;
         }
-        else count ++;
+        else sum ++;
     }
     printf("Shortest word: ");
-    for (int i = m - shortest; i <= m -1; ++i) printf("%c",str[i]);
+    for (i = b - Shortest; i <= b -1; ++i) 
+    {
+        printf("%c",str[i]);
+    }  
     printf("\nLongest word: ");
-    for (int i = n -longest; i <= n -1; ++i) printf("%c",str[i]);
-
-
-
+    for (i = a -Longest; i <= a -1; ++i) 
+    {
+        printf("%c",str[i]);
+    }    
 }	
 
 int main(int argc, char *argv[]) {
