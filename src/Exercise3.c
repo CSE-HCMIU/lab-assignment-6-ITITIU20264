@@ -14,51 +14,38 @@ Ex:
 #include <string.h>
 #include <ctype.h>
 
-void Ex3(char *c){
+void Ex3(char *str)
+{
 	//Your codes here
-	char input[1000] = "";
-    char word[100] = "";
-    char longestWord[100] = "";
-    char shortestWord[100] = "";
-    int wordIndex = 0;
-	
-    for(int inputIndex = 0; inputIndex < strlen(input); inputIndex++)
-    {
-        while (inputIndex < strlen(input) && !isspace(input[inputIndex]) && isalnum(input[inputIndex]))
-        {
-            word[wordIndex++] = input[inputIndex++];
+    int length = strlen(str);
+    int shortest = 99;
+    int longest = 1;
+    int n, m;
+    int count = 0;
+    for (int i = 0; i <= length; ++i){
+        if(str[i] == ' ' || str[i] == '\0'){
+            if(count <shortest){
+                m = i;
+                shortest = count;
+            }
+            else if (count > longest){
+                longest = count;
+                n = i;
+            }
+            count = 0;
         }
-        if(wordIndex != 0)
-        {
-            word[wordIndex] = '\0';
-        }
-        if(strlen(longestWord) == 0)
-        {
-            strcpy(longestWord, word);
-        }
-        if(strlen(shortestWord) == 0)
-        {
-            strcpy(shortestWord, word);
-        }
-        if(strlen(word) > strlen(longestWord))
-        {
-            strcpy(longestWord, word);
-        }
-        if(strlen(word) < strlen(shortestWord))
-        {
-            strcpy(shortestWord, word);
-        }
-        wordIndex = 0;
+        else count ++;
     }
-    printf("Longest word: ", longestWord);
-    printf("\nShortest word: ", shortestWord);
-}
-
+    printf("Shortest word: ");
+    for (int i = m - shortest; i <= m -1; ++i) printf("%c",str[i]);
+    printf("\nLongest word: ");
+    for (int i = n -longest; i <= n -1; ++i) printf("%c",str[i]);
+}	
 int main(int argc, char *argv[]) {
 	//testing variable, applying it to your algorithm for auto-evaluating
-	char *c = argv[1];
+	char *testcase = argv[1];
 	
-	Ex3(c);
+	Ex3(testcase);
 	
 	return 0;
 }
