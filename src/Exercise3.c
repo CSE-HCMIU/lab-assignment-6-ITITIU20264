@@ -40,7 +40,11 @@ void Ex3(char *str)
     for (int i = m - shortest; i <= m -1; ++i) printf("%c",str[i]);
     printf("\nLongest word: ");
     for (int i = n -longest; i <= n -1; ++i) printf("%c",str[i]);
+
+
+
 }	
+
 int main(int argc, char *argv[]) {
 	//testing variable, applying it to your algorithm for auto-evaluating
 	char *testcase = argv[1];
