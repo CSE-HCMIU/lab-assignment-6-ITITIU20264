@@ -15,7 +15,22 @@ Ex:
 
 void Ex4(char *str){
 	//Your codes here
-	
+	int a = 0;
+    int i;
+    for(i = 0; i < strlen(str); i++){
+        if(str[i] != ' '){
+            printf("%c", str[i]);
+            a = 0;
+        }
+        else
+        {
+            if(a == 0) 
+            {
+                printf(" ");
+            }    
+            a++;
+        }
+    }
 }
 
 int main(int argc, char *argv[]) {
