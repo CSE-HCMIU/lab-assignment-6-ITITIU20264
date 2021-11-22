@@ -14,8 +14,7 @@ Ex:
 
 void Ex2(int n, char *str[]){
 	//Your codes here
-	char temp[30];
-
+	char temp[100];
     for (int i = 0; i < n; ++i) {
         for (int j = i + 1; j < n; ++j) {
             if (strcmp(str[i], str[j]) > 0) {
