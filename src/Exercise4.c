@@ -15,15 +15,20 @@ Ex:
 
 void Ex4(char *str){
 	//Your codes here
-	int k = 0;
-    for(int i = 0; i < strlen(str); i++){
+	int a = 0;
+    int i;
+    for(i = 0; i < strlen(str); i++){
         if(str[i] != ' '){
             printf("%c", str[i]);
-            k = 0;
+            a = 0;
         }
-        else{
-            if(k == 0) printf(" ");
-            k++;
+        else
+        {
+            if(a == 0) 
+            {
+                printf(" ");
+            }    
+            a++;
         }
     }
 }
