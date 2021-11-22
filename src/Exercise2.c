@@ -14,7 +14,7 @@ Ex:
 
 void Ex2(int n, char *str[]){
 	//Your codes here
-	char temp[100];
+	char c[1000];
 	int i, j;
     for (i = 0; i < n; i++) 
 	{
@@ -22,9 +22,9 @@ void Ex2(int n, char *str[]){
 		{
             if (strcmp(str[i], str[j]) > 0) 
 			{
-                strcpy(temp, str[i]);
+                strcpy(c, str[i]);
                 strcpy(str[i], str[j]);
-                strcpy(str[j], temp);
+                strcpy(str[j], c);
             }
         }
     }
