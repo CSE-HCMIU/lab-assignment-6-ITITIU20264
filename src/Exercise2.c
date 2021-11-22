@@ -15,16 +15,23 @@ Ex:
 void Ex2(int n, char *str[]){
 	//Your codes here
 	char temp[100];
-    for (int i = 0; i < n; ++i) {
-        for (int j = i + 1; j < n; ++j) {
-            if (strcmp(str[i], str[j]) > 0) {
+	int i, j;
+    for (i = 0; i < n; i++) 
+	{
+        for (j = i + 1; j < n; j++) 
+		{
+            if (strcmp(str[i], str[j]) > 0) 
+			{
                 strcpy(temp, str[i]);
                 strcpy(str[i], str[j]);
                 strcpy(str[j], temp);
             }
         }
     }
-    for(int i = 0; i < n; i++) printf("%s ",str[i]);
+    for(i = 0; i < n; i++) 
+	{
+		printf("%s ",str[i]);
+	}	
 }
 
 int main(int argc, char *argv[]) {
