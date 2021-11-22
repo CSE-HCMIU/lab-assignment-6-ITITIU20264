@@ -17,7 +17,27 @@ Ex:
 
 void Ex5(char *str){
 	//Your codes here
-	
+	int a = 1;
+	int i;
+	int j;
+    for(i = 0, j = strlen(str) - 1; i <= strlen(str)/2 + 1, j >= strlen(str)/2; ++i, --j)
+	{
+        if((str[i] == '{' && str[j] == '}') || (str[i] == '[' && str[j] == ']') || (str[i] == '(' && str[j] == ')')) 
+		continue;
+        else
+		{
+            a = 0;
+            break;
+        }
+    }
+	if(a == 0) 
+	{
+		printf("Invalid!");
+	}	
+    else 
+	{
+		printf("Valid!");
+	}	
 }
 
 int main(int argc, char *argv[]) {
