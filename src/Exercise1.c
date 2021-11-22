@@ -14,13 +14,13 @@
 void Ex1(char* number){
 	//Your codes here
 	int lenght = strlen(number); 
-    char* single_digits[] = { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
-    char* two_digits[] = { "", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen" };
-    char* tens_multiple[] = { "", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety" };
-    char* tens_power[] = { "hundred", "thousand" };
+    char* singledigits[] = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
+    char* twodigits[] = {"", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"};
+    char* tensmultiple[] = {"", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"};
+    char* tensower[] = {"hundred", "thousand"};
     if (lenght == 1) 
 	{
-        printf("%s\n", single_digits[*number - '0']);
+        printf("%s\n", singledigits[*number - '0']);
         return;
     }
     while (*number != '\0') 
@@ -29,8 +29,8 @@ void Ex1(char* number){
 		{
             if (*number - '0' != 0) 
 			{
-                printf("%s ", single_digits[*number - '0']);
-                printf("%s ", tens_power[lenght - 3]); 
+                printf("%s ", singledigits[*number - '0']);
+                printf("%s ", tensower[lenght - 3]); 
             }
             lenght--;
         }
@@ -41,7 +41,7 @@ void Ex1(char* number){
             if (*number == '1') 
 			{
                 int sum = *number - '0' + *(number + 1) - '0';
-                printf("%s\n", two_digits[sum]);
+                printf("%s\n", twodigits[sum]);
                 return;
             }
             else if (*number == '2' && *(number + 1) == '0') 
@@ -52,10 +52,10 @@ void Ex1(char* number){
             else 
 			{
                 int i = *number - '0';
-                printf("%s ", i ? tens_multiple[i] : "");
+                printf("%s ", i ? tensmultiple[i] : "");
                 ++number;
                 if (*number != '0')
-                    printf("%s ", single_digits[*number - '0']);
+                    printf("%s ", singledigits[*number - '0']);
             }
         }
         number++;
