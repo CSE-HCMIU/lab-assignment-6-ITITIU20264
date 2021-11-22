@@ -21,6 +21,8 @@ void Ex3(char *c){
     char longestWord[100] = "";
     char shortestWord[100] = "";
     int wordIndex = 0;
+	printf("Input a string: ");
+	fgets(input, sizeof(input), stdin);
     for(int inputIndex = 0; inputIndex < strlen(input); inputIndex++)
     {
         while (inputIndex < strlen(input) && !isspace(input[inputIndex]) && isalnum(input[inputIndex]))
@@ -49,15 +51,15 @@ void Ex3(char *c){
         }
         wordIndex = 0;
     }
-    printf("Longest word: \'%s\'", longestWord);
-    printf("\nShortest word: \'%s\'", shortestWord);
+    printf("Longest word: ", longestWord);
+    printf("\nShortest word: ", shortestWord);
 }
 
 int main(int argc, char *argv[]) {
 	//testing variable, applying it to your algorithm for auto-evaluating
-	char *testcase = argv[1];
+	char *c = argv[1];
 	
-	Ex3(testcase);
+	Ex3(c);
 	
 	return 0;
 }
