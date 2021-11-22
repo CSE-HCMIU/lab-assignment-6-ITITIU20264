@@ -21,8 +21,6 @@ void Ex3(char *c){
     char longestWord[100] = "";
     char shortestWord[100] = "";
     int wordIndex = 0;
-    printf("Input a string: ");
-    fgets(input, sizeof(input), stdin);
     for(int inputIndex = 0; inputIndex < strlen(input); inputIndex++)
     {
         while (inputIndex < strlen(input) && !isspace(input[inputIndex]) && isalnum(input[inputIndex]))
